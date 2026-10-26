@@ -48,7 +48,8 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="${hostName}" android:pathPrefix="/registro-de-estudiantes/registro-clases" />
+                <data android:scheme="https" android:host="${hostName}" android:pathPrefix="/Registro-de-estudiantes/registro-clases" />
+                <data android:pathPrefix="/registro-de-estudiantes/registro-clases" />
             </intent-filter>
         </activity>
 
