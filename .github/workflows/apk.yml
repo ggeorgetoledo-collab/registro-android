@@ -20,12 +20,22 @@ jobs:
           java-version: 17
 
       - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
 
       - name: Compilar
         run: |
-          chmod +x gradlew
-          ./gradlew assembleRelease --no-daemon --stacktrace
-          cp app/build/outputs/apk/release/app-release.apk RegistroClases.apk
+          echo "Archivos del repositorio:"
+          find . -maxdepth 3 -not -path './.git*' | sort
+          SETTINGS=$(find . -name settings.gradle -not -path './.git/*' | head -1)
+          if [ -z "$SETTINGS" ]; then
+            echo "::error::No encontré settings.gradle. Falta subir los archivos del proyecto (carpeta app, build.gradle, settings.gradle...)."
+            exit 1
+          fi
+          cd "$(dirname "$SETTINGS")"
+          echo "Compilando en: $(pwd)"
+          gradle assembleRelease --no-daemon --stacktrace
+          cp app/build/outputs/apk/release/app-release.apk "$GITHUB_WORKSPACE/RegistroClases.apk"
 
       - name: Publicar versión con el APK
         uses: softprops/action-gh-release@v2
