@@ -3,4 +3,14 @@
     <color name="barra">#F4F5F7</color>
     <color name="barra_oscura">#14171D</color>
     <color name="fondo">#F4F5F7</color>
+
+    <!-- Widget (modo claro) -->
+    <color name="w_fondo">#FFFFFF</color>
+    <color name="w_texto">#1B2130</color>
+    <color name="w_texto2">#586174</color>
+    <color name="w_linea">#E2E5EA</color>
+    <color name="w_acento">#4453C4</color>
+    <color name="w_acento_suave">#ECEEFB</color>
+    <color name="w_chip">#FBF0D9</color>
+    <color name="w_chip_texto">#8A5A00</color>
 </resources>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Registro de Clases</string>
+    <string name="widget_desc">Tu clase actual o siguiente, las entregas que vencen y accesos a Registrar, Notas y Actualizar portal.</string>
+    <string name="acc_registrar">Registrar</string>
+    <string name="acc_notas">Notas</string>
+    <string name="acc_portal">Actualizar portal</string>
     <string name="asset_statements" translatable="false">[{ \"relation\": [\"delegate_permission/common.handle_all_urls\"], \"target\": { \"namespace\": \"web\", \"site\": \"https://ggeorgetoledo-collab.github.io\" } }]</string>
 </resources>
