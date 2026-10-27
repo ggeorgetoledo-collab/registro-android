@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:shortcutId="registrar" android:enabled="true"
+        android:icon="@drawable/w_ic_registrar"
+        android:shortcutShortLabel="@string/acc_registrar">
+        <intent android:action="android.intent.action.VIEW"
+            android:targetPackage="cl.gtoledo.registroclases"
+            android:targetClass="com.google.androidbrowserhelper.trusted.LauncherActivity"
+            android:data="https://ggeorgetoledo-collab.github.io/Registro-de-estudiantes/registro-clases-6.html?ir=registrar" />
+    </shortcut>
+    <shortcut android:shortcutId="notas" android:enabled="true"
+        android:icon="@drawable/w_ic_notas"
+        android:shortcutShortLabel="@string/acc_notas">
+        <intent android:action="android.intent.action.VIEW"
+            android:targetPackage="cl.gtoledo.registroclases"
+            android:targetClass="com.google.androidbrowserhelper.trusted.LauncherActivity"
+            android:data="https://ggeorgetoledo-collab.github.io/Registro-de-estudiantes/registro-clases-6.html?ir=notas" />
+    </shortcut>
+    <shortcut android:shortcutId="portal" android:enabled="true"
+        android:icon="@drawable/w_ic_portal"
+        android:shortcutShortLabel="@string/acc_portal">
+        <intent android:action="android.intent.action.VIEW"
+            android:targetPackage="cl.gtoledo.registroclases"
+            android:targetClass="com.google.androidbrowserhelper.trusted.LauncherActivity"
+            android:data="https://ggeorgetoledo-collab.github.io/Registro-de-estudiantes/registro-clases-6.html?ir=portal" />
+    </shortcut>
+</shortcuts>
