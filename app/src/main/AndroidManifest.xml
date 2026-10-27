@@ -42,6 +42,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/accesos" />
 
             <!-- Los enlaces a la app (por ejemplo, desde WhatsApp) se abren aquí -->
             <intent-filter android:autoVerify="true">
@@ -50,6 +51,35 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" android:host="${hostName}" android:pathPrefix="/Registro-de-estudiantes/registro-clases" />
                 <data android:pathPrefix="/registro-de-estudiantes/registro-clases" />
+            </intent-filter>
+        </activity>
+
+        <!-- Widget "Mi día" -->
+        <receiver
+            android:name=".AgendaWidget"
+            android:exported="true"
+            android:label="Mi día">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_agenda_info" />
+        </receiver>
+
+        <!-- Recibe la conexión del widget desde la app web (enlace registroclases://conectar) -->
+        <activity
+            android:name=".ConectarActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="registroclases" android:host="conectar" />
             </intent-filter>
         </activity>
 
