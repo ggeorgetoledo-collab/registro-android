@@ -1,3 +1,49 @@
 plugins {
-    id 'com.android.application' version '8.5.2' apply false
+    id 'com.android.application'
+}
+
+// Dirección de la app web (GitHub Pages). Si cambia, se modifica solo aquí.
+def webHost = 'ggeorgetoledo-collab.github.io'
+def webUrl  = 'https://ggeorgetoledo-collab.github.io/Registro-de-estudiantes/registro-clases-6.html'
+
+android {
+    namespace 'cl.gtoledo.registroclases'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'cl.gtoledo.registroclases'
+        minSdk 23
+        targetSdk 34
+        versionCode Integer.parseInt(System.getenv('GITHUB_RUN_NUMBER') ?: '1')
+        versionName "1." + (System.getenv('GITHUB_RUN_NUMBER') ?: '0')
+
+        manifestPlaceholders = [ hostName: webHost, defaultUrl: webUrl ]
+        resValue 'string', 'app_url', webUrl
+    }
+
+    signingConfigs {
+        registro {
+            storeFile file('registro.keystore')
+            storePassword 'registro-clases'
+            keyAlias 'registro'
+            keyPassword 'registro-clases'
+        }
+    }
+
+    buildTypes {
+        debug { signingConfig signingConfigs.registro }
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.registro
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
 }
