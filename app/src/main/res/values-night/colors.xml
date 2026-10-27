@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Widget (modo oscuro) -->
+    <color name="w_fondo">#1C2029</color>
+    <color name="w_texto">#E8EAEF</color>
+    <color name="w_texto2">#A3AAB8</color>
+    <color name="w_linea">#2D323C</color>
+    <color name="w_acento">#9AA6F2</color>
+    <color name="w_acento_suave">#262C45</color>
+    <color name="w_chip">#3A2F14</color>
+    <color name="w_chip_texto">#FBBF24</color>
+</resources>
